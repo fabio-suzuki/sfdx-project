@@ -1,0 +1,29 @@
+<template>
+  <lightning-card icon-name="utility:image" title="Picture Gallery">
+    <div slot="actions">
+      <lightning-button-icon
+        onclick={openFullScreen}
+        size="large"
+        icon-name="utility:expand"
+      ></lightning-button-icon>
+    </div>
+    <c-picture-carousel slides={slides}></c-picture-carousel>
+
+    <template if:true={fullScreen}>
+      <div role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+          <c-picture-carousel slides={slides}></c-picture-carousel>
+        </div>
+        <div class="btn slds-modal__close close x-large">
+          <lightning-button-icon
+            variant="border-filled"
+            onclick={closeDialog}
+            size="large"
+            icon-name="utility:close"
+          ></lightning-button-icon>
+        </div>
+      </div>
+      <div class="slds-backdrop slds-backdrop--open"></div>
+    </template>
+  </lightning-card>
+</template>
