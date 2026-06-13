@@ -7,14 +7,12 @@
 	},
 
   	recordChangeHandler : function(component, event, helper) {
-        console.log('recordChangeHandler');
         var id = event.getParam("recordId");
         component.set("v.dsRecordId", id);
         helper.reloadRecord(component);
 	},
 
   	onRecordUpdated : function(component, event) {
-        console.log('onRecordUpdated');
         var sObject = component.get("v.sObject");
         if (sObject) {
 	        component.set("v.title", sObject[component.get("v.titleField")]);
