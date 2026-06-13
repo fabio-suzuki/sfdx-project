@@ -1,27 +1,23 @@
 @isTest
 private class DreamHouseSampleDataControllerTest {
+  @isTest
+  static void test_deleteAll() {
+    Property__c property = new Property__c();
+    Broker__c broker = new Broker__c();
 
-    @isTest
-    static void test_deleteAll() {
+    insert property;
+    insert broker;
 
-        Property__c property = new Property__c();
-        Broker__c broker = new Broker__c();
+    System.assertEquals(1, [SELECT COUNT() FROM Property__c]);
+    System.assertEquals(1, [SELECT COUNT() FROM Broker__c]);
 
-        insert property;
-        insert broker;
+    Test.startTest();
 
-        System.assertEquals( 1, [ SELECT count() FROM Property__c ] );
-        System.assertEquals( 1, [ SELECT count() FROM Broker__c ] );
+    DreamHouseSampleDataController.deleteAll();
 
-        Test.startTest();
+    Test.stopTest();
 
-        DreamHouseSampleDataController.deleteAll();
-
-        Test.stopTest();
-
-        System.assertEquals( 0, [ SELECT count() FROM Property__c ] );
-        System.assertEquals( 0, [ SELECT count() FROM Broker__c ] );
-
-    }
-
+    System.assertEquals(0, [SELECT COUNT() FROM Property__c]);
+    System.assertEquals(0, [SELECT COUNT() FROM Broker__c]);
+  }
 }
