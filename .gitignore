@@ -1,3 +1,7 @@
 .sfdx
 .vscode
 .DS_Store
+
+# Gym App
+gym-app/node_modules/
+gym-app/.expo/
