@@ -8,11 +8,11 @@
     },
     "securitySettings": {
       "passwordPolicies": {
-        "enableSetPasswordInApi": true
+        "enableSetPasswordInApi": false
       }
     },
     "mobileSettings": {
-      "enableS1EncryptedStoragePref2": false
+      "enableS1EncryptedStoragePref2": true
     }
   }
 }
