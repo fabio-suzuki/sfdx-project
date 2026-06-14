@@ -1,0 +1,27 @@
+<template>
+  <div class="gallery">
+    <div class="filmstrip" style={filmstripStyle}>
+      <template for:each={slidesWithIndex} for:item="slide">
+        <div key={slide.index} class="slide" style={slide.style}></div>
+      </template>
+    </div>
+    <div class={buttonSizeClass}>
+      <lightning-button-icon
+        variant="border-filled"
+        onclick={prev}
+        size="large"
+        icon-name="utility:chevronleft"
+        disabled={isPrevDisabled}
+      ></lightning-button-icon>
+    </div>
+    <div class={buttonSizeClass}>
+      <lightning-button-icon
+        variant="border-filled"
+        onclick={next}
+        size="large"
+        icon-name="utility:chevronright"
+        disabled={isNextDisabled}
+      ></lightning-button-icon>
+    </div>
+  </div>
+</template>
