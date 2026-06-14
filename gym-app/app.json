@@ -26,6 +26,12 @@
     "plugins": [
       "expo-sqlite",
       "expo-status-bar"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "13162517-b11f-4615-ae37-11ad7c1aa683"
+      }
+    },
+    "owner": "fabio_suzuki"
   }
 }
